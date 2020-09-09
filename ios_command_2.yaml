@@ -1,0 +1,10 @@
+- name: "Multiple ios_command"
+  hosts: sw_access
+  gather_facts: false
+
+  tasks:
+    - name: run multiple commands on remote nodes
+      ios_command:
+        commands:
+          - show version
+          - show interfaces

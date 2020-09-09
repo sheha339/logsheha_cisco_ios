@@ -1,0 +1,13 @@
+- name: "Push config file with ios_config"
+  hosts: sw_access
+  become: yes
+  gather_facts: false
+
+  tasks:
+    - name: Push config file
+      ios_config:
+       src: "push/config_file.cfg"
+
+    - name: save running to startup when modified
+      ios_config:
+       save_when: modified

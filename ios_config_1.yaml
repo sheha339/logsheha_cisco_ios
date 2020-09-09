@@ -1,0 +1,8 @@
+- name: "Add user with ios_config"
+  hosts: sw_access
+  gather_facts: false
+
+  tasks:
+    - name: Add user
+      ios_config:
+        lines: username latihan password 0 latihan

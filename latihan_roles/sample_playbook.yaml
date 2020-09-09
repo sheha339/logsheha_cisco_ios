@@ -1,0 +1,6 @@
+- name: "Sample playbook"
+  hosts: sw_access
+  gather_facts: false
+
+  roles:
+    - system-demo

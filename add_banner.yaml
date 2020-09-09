@@ -1,0 +1,19 @@
+- name: "Add banner login"
+  hosts: sw_access
+  gather_facts: false
+
+  tasks:
+    - name: configure the login banner
+      ios_banner:
+        banner: login
+        text: |
+          ------------------------------------------------
+          -----------------*********----------------------
+
+          ANSIBLE - Cisco LAB Bagian 2 - Banner
+          Logsheha.com
+          Playbook menambahkan login banner
+
+          -----------------*********----------------------
+          ------------------------------------------------
+        state: present

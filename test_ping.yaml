@@ -1,0 +1,8 @@
+- name: "Test Ping dari Cisco ke Gateway"
+  hosts: sw_access
+  gather_facts: false
+
+  tasks:
+    - name: Test koneksi ke gateway
+      ios_ping:
+        dest: 10.10.68.1

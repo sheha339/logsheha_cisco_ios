@@ -1,0 +1,10 @@
+- name: "Add motd banner from file"
+  hosts: sw_access
+  gather_facts: false
+
+  tasks:
+    - name: Configure banner from file
+      ios_banner:
+        banner:  motd
+        text: "{{ lookup('file', 'push/text_motd.txt') }}"
+        state: present

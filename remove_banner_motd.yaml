@@ -1,0 +1,9 @@
+- name: "Remove motd banner"
+  hosts: sw_access
+  gather_facts: false
+  
+  tasks:
+    - name: remove the motd banner
+      ios_banner:
+        banner: motd
+        state: absent

@@ -1,0 +1,11 @@
+- name: "Add motd banner"
+  hosts: sw_access
+  gather_facts: false
+
+  tasks:
+    - name: Configure banner from file
+      ios_banner:
+        banner:  motd
+        text: |
+          Ini adalah contoh banner motd
+        state: present

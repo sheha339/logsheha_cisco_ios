@@ -1,0 +1,15 @@
+- name: "Save output ios_command"
+  hosts: sw_access
+  gather_facts: false
+
+  tasks:
+    - name: run show version on remote devices
+      ios_command:
+        commands: show version
+      register: result
+
+    - name: Save Output
+      connection: local
+      copy:
+        content: "{{ result.stdout_lines }}"
+        dest: "backup/{{ inventory_hostname }}_show_ip.txt"

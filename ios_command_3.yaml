@@ -1,0 +1,13 @@
+- name: "Show output ios_command"
+  hosts: sw_access
+  gather_facts: false
+
+  tasks:
+    - name: run show version on remote devices
+      ios_command:
+        commands: show version
+      register: result
+
+    - name: Display result to terminal window
+      debug:
+         var: result.stdout_lines
